@@ -16,11 +16,7 @@ public class Client {
 		this.codePostal = codePostal;
 	}
 	public void afficheClient() {
-		System.out.println(this.nom);
-		System.out.println(this.prenom);
-		System.out.println(this.adresse);
-		System.out.println(this.ville);
-		System.out.println(this.codePostal);
+		System.out.println(this.nom +" " + this.prenom +" "+ this.adresse +" "+ this.ville + " " +this.codePostal);
 		
 	}
 	
