@@ -20,7 +20,6 @@ public class Main {
 			System.out.println("4. Afficher vos informaions personnelles");
 			System.out.println("0. Quitter");
  
-			System.out.println("Something is in the buffer");
 			choix = Integer.parseInt(inpt.nextLine());
 			
 			switch (choix) {
