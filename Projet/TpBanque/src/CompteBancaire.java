@@ -54,6 +54,12 @@ public class CompteBancaire {
 		Scanner input = new Scanner(System.in);
 		
 		int choix = -1 ;
+
+		
+
+		while (choix != 0 ) {
+
+
 		System.out.println("Que souhaitez-vous faire ?");
 		
 		System.out.println("1. Consulter mon solde");
@@ -61,11 +67,8 @@ public class CompteBancaire {
 		System.out.println("3. Retirer de l'argent");
 		System.out.println("4. Voir mon historique des opérations");
 		System.out.println("0. Quitter");
-		
-
-		while (choix != 0 ) {
 			
-			choix = input.nextInt();
+		choix = input.nextInt();
 		switch(choix) {
 		
 		case 1: 
