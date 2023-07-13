@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -54,9 +55,17 @@ public class Client {
 	}
 	
 	public void creerCompte() {
-		
-		this.compte = new CompteBancaire(0);
-		this.compteExist = true;
+		 if (this.compteExist == true)
+		 {
+			 System.out.println("Vous avez déjà un compte");
+		 }
+		 else	
+		 {
+			this.compte = new CompteBancaire(0);
+			this.compteExist = true;
+			 
+		 }
+
 	}
 	
 	public void afficheClient()
@@ -72,44 +81,59 @@ public class Client {
 	public void modifClient() {
 		
 		Scanner input = new Scanner(System.in);
+		Scanner string = new Scanner(System.in);
+		Scanner post = new Scanner(System.in);
 		
 		int choix = -1 ;
 		System.out.println("Quelle information voulez-vous modifier ?");
-		
-		System.out.println("1. Nom");
-		System.out.println("2. Prenom");
-		System.out.println("3. Adresse");
-		System.out.println("4. Ville");
-		System.out.println("5. Code Postale");
-		System.out.println("0. Quitter");
-		
 
-		while (choix != 0 ) {
+		
+		try {
 			
-			choix = input.nextInt();
-			
-			switch (choix) {
-			
-			case 1 :
-				this.nom = input.next();
-				break;
-			case 2:
-				this.prenom = input.next();
-				break;
-			case 3:
-				this.adresse = input.next();
-				break;
-			case 4:
-				this.ville = input.next();
-				break;
-			case 5:
-				this.codePostal = input.nextInt();
-				break;		
+			while (choix != 0 ) {
+				
+				System.out.println("1. Nom : " + this.nom );
+				System.out.println("2. Prenom : " + this.prenom);
+				System.out.println("3. Adresse : " + this.adresse);
+				System.out.println("4. Ville : " + this.ville);
+				System.out.println("5. Code Postale : " + this.codePostal);
+				System.out.println("0. Quitter");
+				
+				choix = input.nextInt();
+
+				
+				switch (choix) {
+				case 0 :
+					break;
+				case 1 :
+					System.out.println("Modifier votre nom");
+					this.nom = string.nextLine();
+					break;
+				case 2:
+					System.out.println("Modifier votre prenom");
+					this.prenom = string.nextLine();
+					break;
+				case 3:
+					System.out.println("Modifier votre adresse");
+					this.adresse = string.nextLine();
+					break;
+				case 4:
+					System.out.println("Modifier votre ville");
+					this.ville = string.nextLine();
+					break;
+				case 5:
+					System.out.println("Modifier votre code postale");
+					this.codePostal = post.nextInt();
+					break;		
 			}
-			
 		}
-		
+		} catch(InputMismatchException e )
+		{
+ 			System.out.println("Error " + e);
+			System.out.println("choix value " + choix);
+			System.out.println("Error " + this.nom);
+		}
 
-		
-	}
+}
+	
 }

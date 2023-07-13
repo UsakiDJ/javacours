@@ -217,7 +217,7 @@ public class Month
 }
 ``` 
 
-La déclarationd 'une enum  = utilisation d'une "classe cachée" 
+La déclaration d'une enum  = utilisation d'une "classe cachée" 
 
 
 ### Tableau
@@ -250,3 +250,17 @@ Syntaxe pour récup élément dans tableau 2D
 ```java 
 int elemTableau2D =  tableau2[0][1] ; 
 ``` 
+
+autres méthodes de création : 
+
+```java
+int[][] matrice;
+matrice = new int[2][];
+matrice[0] = new int [4];
+matrice[1] = new int [4];
+```
+
+Autre syntaxe pas recommandé
+```java
+int [][] encoreUneAutreSyntaxe = {{1,3,4},{23,21,25}}
+```
